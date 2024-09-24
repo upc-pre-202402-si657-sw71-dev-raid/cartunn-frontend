@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/wallet-frontend/browser"
+  publish = "dist/upc-pre202401-si729-sw51-the-coders-frontend/browser"
   command = "ng build --configuration production"
 
 [[redirects]]
