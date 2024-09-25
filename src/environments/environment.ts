@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverBasePath: 'https://cartunnservice.up.railway.app/api/v1',
+  serverBasePath: 'https://cartunn-service-railway.up.railway.app/api/v1',
 };
