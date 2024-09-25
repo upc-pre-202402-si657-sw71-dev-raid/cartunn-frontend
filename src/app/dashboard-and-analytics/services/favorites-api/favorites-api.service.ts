@@ -9,7 +9,7 @@ import {BaseService} from '../../../shared/services/base.service';
 export class FavoritesApiService extends BaseService {
 
   private favoritesUrl = `${this.baseUrl}/favorites`;
-  private productsUrl = `https://cartunnbackend.up.railway.app/api/v1/products`;
+  private productsUrl = `${this.baseUrl}/products`;
 
   token = localStorage.getItem('token');
   headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
