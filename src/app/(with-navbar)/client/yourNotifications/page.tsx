@@ -17,7 +17,7 @@ const YourNotificationsPage = () => {
 
     useEffect(() => {
         getData();
-    }, [notifications]);
+    }, []);
 
     return (
         <article className="">

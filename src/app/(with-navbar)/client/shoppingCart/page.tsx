@@ -23,7 +23,7 @@ const ShoppingCartPage = () => {
     useEffect(() => {
         getData();
         // if (price) setTotalPrice(price.toString());
-    }, [orders]);
+    }, []);
 
     return (
         <article>

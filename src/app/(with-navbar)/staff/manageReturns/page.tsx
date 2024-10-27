@@ -18,7 +18,7 @@ const manageReturns = () => {
 
     useEffect(() => {
         getData();
-    }, [products]);
+    }, []);
 
     return (
         <article>

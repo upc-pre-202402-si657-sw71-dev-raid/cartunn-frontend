@@ -27,7 +27,7 @@ const HomePage = () => {
 
     useEffect(() => {
         getData();
-    }, [orders]);
+    }, []);
 
     const handleExitDateChange = (orderId: number, newDate: string) => {
         const updatedOrders = orders.map(order =>
