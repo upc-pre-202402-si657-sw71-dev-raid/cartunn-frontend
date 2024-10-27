@@ -17,7 +17,7 @@ const AllReportsPage = () => {
 
     useEffect(() => {
         getData();
-    }, [tunningTasks]);
+    }, []);
 
     return (
         <article>

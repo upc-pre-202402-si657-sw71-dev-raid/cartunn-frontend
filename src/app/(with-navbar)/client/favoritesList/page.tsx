@@ -16,7 +16,7 @@ const FavoriteListPage = () => {
 
     useEffect(() => {
         getData();
-    }, [favorites]);
+    }, []);
 
     return (
         <article>

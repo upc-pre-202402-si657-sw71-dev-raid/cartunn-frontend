@@ -17,7 +17,7 @@ const HomePage = () => {
 
     useEffect(() => {
         getData();
-    }, [products]);
+    }, []);
 
     return (
         <article>
