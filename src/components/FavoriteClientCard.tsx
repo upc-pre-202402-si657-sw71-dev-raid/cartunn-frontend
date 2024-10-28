@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 import removeItem from "@/assets/icons/trash.png";
 
 import Product from "@/interfaces/Product";
-import getProductById from "@/logic/getProductById";
+import getProductById from "@/logic/getOrderById";
 import deleteFavoriteProductById from "@/logic/deleteFavoriteProductById";
 
 type FavoriteClientCardProps = {

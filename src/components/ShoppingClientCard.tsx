@@ -7,7 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import removeItem from "@/assets/icons/trash.png";
 
 import Product from "@/interfaces/Product";
-import getProductById from "@/logic/getProductById";
+import getOrderById from "@/logic/getOrderById";
 import deleteOrderById from "@/logic/deleteOrderById";
 
 type ShoppingClientCardProps = {
@@ -25,7 +25,7 @@ const ShoppingClientCard = (props: ShoppingClientCardProps) => {
     };
 
     const getData = async () => {
-        const response = await getProductById(props.id);
+        const response = await getOrderById(props.id);
         setProducts(response);
 
         if (response && response.price) {
@@ -36,8 +36,6 @@ const ShoppingClientCard = (props: ShoppingClientCardProps) => {
     useEffect(() => {
         getData();
     }, [props.id]);
-
-    console.log(product);
 
     if (!product) return null;
 
