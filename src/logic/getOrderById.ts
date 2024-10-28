@@ -1,6 +1,6 @@
 import environment from "@/environments/enviroment";
 
-const getProductById = async (id: number) => {
+const getOrderById = async (id: number) => {
     const token = localStorage.getItem("token");
 
     const requestOptions = {
@@ -12,7 +12,7 @@ const getProductById = async (id: number) => {
     };
 
     try {
-        const response = await fetch(`${environment.serverBasePath}/products/${id}`, requestOptions);
+        const response = await fetch(`${environment.serverBasePath}/orders/${id}`, requestOptions);
 
         if (!response.ok) throw new Error("Error deleting item");
 
@@ -23,4 +23,4 @@ const getProductById = async (id: number) => {
     }
 };
 
-export default getProductById;
+export default getOrderById;
