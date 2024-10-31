@@ -14,7 +14,7 @@ export default function WithNavbarLayout({
     return (
         <>
             <DrawerDashboard typeUser={typeUser} />
-            <main className="px-16 mt-4">
+            <main className="px-16 mt-4 " >
                 {children}
             </main>
         </>
