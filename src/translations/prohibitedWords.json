@@ -1,0 +1,30 @@
+{
+  "prohibitedWords": {
+    "en": [
+      "idiot", "stupid", "hate", "dumb", "ugly",
+      "jerk", "moron", "nasty", "suck", "loser",
+      "bastard", "damn", "hell",
+      "crap", "poop", "pooping", "pooped", "shit", "shitting",
+      "pee", "peeing", "piss", "pissing", "urine", "urinating",
+      "masturbate", "masturbating", "fuck", "fucking", "sex", "sexting", "sexual",
+      "cum", "cumming", "ejaculate", "menstruate",
+      "racist", "nigger", "nigga", "kkk", "white supremacist", "white-supremacist",
+      "porn", "pornography", "cp", "child porn", "child-porn", "child pornography", "child-pornography", "hentai",
+      "butt", "ass", "penis", "cock", "dick", "breast", "tit", "vagina", "pussy",
+      "gay", "lesbian", "bisexual", "trans", "transsexual", "transvestite", "pansexual", "asexual"
+    ],
+    "es": [
+      "idiota", "tonto", "odio", "imbécil", "feo",
+      "estúpido", "tarado", "asqueroso", "chupar" ,"perdedor",
+      "maldito", "carajo", "infierno",
+      "caca", "popo", "cagar", "cagado", "mierda", "cagada",
+      "pipi", "pichi", "mear", "meando", "orinar", "orinando",
+      "mastubar", "masturbando", "follar", "follando", "coger", "cogiendo", "sexo", "sexting", "sexual",
+      "semen", "eyacular", "menstruar",
+      "racista", "nigger", "nigga", "kkk", "supremacia", "supremacía blanca", "supremacia-blanca", "suprecía-blanca",
+      "porno", "pornografía", "pornografia", "cp", "porno infantil", "porno-infantil", "pornografía infantil", "pornografía-infantil", "hentai",
+      "trasero", "culo", "poto", "pene", "pito", "polla", "pilin", "pechos", "teta", "senos", "vagina", "coño",
+      "homosexual", "lesbiana", "bisexual", "trans", "transsexual", "travesti", "pansexual", "asexual"
+    ]
+  }
+}
