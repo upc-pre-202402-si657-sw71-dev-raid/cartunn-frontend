@@ -14,18 +14,18 @@ const SignUp = () => {
     const [role, setRole] = useState("1");
     const [user, setUser] = useState({ username: "", password: "" });
     const router = useRouter();
-    const [allProhibitedWords, setAllProhibitedWords] = useState([]);
+    const [allProhibitedWords, setAllProhibitedWords] = useState<string[]>([]);
 
     useEffect(() => {
         const mergedWords = Object.values(prohibitedWordsData.prohibitedWords).flat();
         setAllProhibitedWords(mergedWords.map(word => word.toLowerCase()));
     }, []);
 
-    const validateUsername = (username) => {
+    const validateUsername = (username: string) => {
         return !allProhibitedWords.some(word => username.toLowerCase().includes(word));
     };
 
-    const isPasswordValid = (password) => {
+    const isPasswordValid = (password: string) => {
         const minLength = 8;
         const hasUpperCase = /[A-Z]/.test(password);
         const hasLowerCase = /[a-z]/.test(password);
