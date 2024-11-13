@@ -28,32 +28,37 @@ const Login = () => {
     }
 
     const signInHandler = async () => {
-        const requestOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username: user.username,
-                password: user.password,
-            }),
-        };
+        try {
+            const requestOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username: user.username,
+                    password: user.password,
+                }),
+            };
 
-        const response = await fetch(`${environment.serverBasePath}/authentication/sign-in`, requestOptions);
-        if (!response.ok) {
-            throw new Error("Login failed");
+            const response = await fetch(`${environment.serverBasePath}/authentication/sign-in`, requestOptions);
+            if (!response.ok) {
+                new Error("Login failed");
+            }
+
+            const result = await response.json();
+            localStorage.setItem("token", result.token);
+            loginHandler();
+            return result;
+        } catch (error) {
+            console.error("Error during login:", error);
+            throw error;
         }
-
-        const result = await response.json();
-        localStorage.setItem("token", result.token);
-        loginHandler();
-        return result;
     };
 
     const notify = () => {
         toast.promise(signInHandler(), {
-            loading: t("login.notifications.success"),
-            success: t("login.notifications.in-process"),
+            loading: t("login.notifications.in-process"),
+            success: t("login.notifications.success"),
             error: t("login.notifications.error"),
         });
     };
@@ -97,7 +102,7 @@ const Login = () => {
                     </button>
                 </section>
                 <span className="flex justify-center">
-                    {t("login.do-you-already-have-an-account")}
+                    {t("login.no-account")}
                     <Link href="/sign-up">
                         <u>{t("login.sign-up")}</u>
                     </Link>

@@ -1,59 +1,84 @@
 "use client"
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useRouter } from "next/navigation";
-import toast, { Toaster } from "react-hot-toast";
+import {useState} from "react";
+import {useTranslation} from "react-i18next";
+import {useRouter} from "next/navigation";
+import toast, {Toaster} from "react-hot-toast";
 
 import BackButton from "@/components/BackButton";
 import environment from "@/environments/enviroment";
+import {types} from "sass";
+import List = types.List;
 
 const ResetPassword = () => {
     const { t } = useTranslation("global");
-    const [user, setUser] = useState({username: "", password: ""});
+    const [user, setUser] = useState({ username: "", password: "" });
     const router = useRouter();
 
-    /*
-    const token = localStorage.getItem("token");
+    const getUserId = async () => {
+        try {
+            const response = await fetch(`${environment.serverBasePath}/users/get-user/${user.username}`);
+            if (!response.ok) throw new Error("User not found");
+            const result = await response.json();
+            await resetPasswordHandler(result.id, result.roles);
+            router.push("/login");
+        } catch (error) {
+            toast.error(t("reset-password.notifications.error.invalid-username"));
+        }
+    };
 
-    const signUpHandler = async () => {
+    const isPasswordValid = (password) => {
+        const minLength = 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+        return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
+    };
+
+    const resetPasswordHandler = async (id, rol) => {
         const userRequestOptions = {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
                 username: user.username,
                 password: user.password,
+                roles: rol,
             }),
         };
 
         try {
-            const userResponse = await fetch(`${environment.serverBasePath}/authentication/sign-up/1`, userRequestOptions);
+            console.log(rol);
+            console.log(id);
+            const userResponse = await fetch(
+                `${environment.serverBasePath}/users/update-user/${id}`,
+                userRequestOptions
+            );
 
-            if (!userResponse.ok) throw new Error("Error registering user");
-
-            const result = await userResponse.json();
-            return result;
+            if (!userResponse.ok) throw new Error("Error resetting password");
+            toast.success(t("reset-password.notifications.success"));
+            return await userResponse.json();
         } catch (error) {
-            console.error(error);
-            throw new Error("Network error or server error");
+            toast.error(t("reset-password.notifications.error.server"));
         }
-    };*/
+    };
 
-    const setRouterHandler = async () => {
-        // await signUpHandler();
-        router.push("/login");
+    const handleSubmit = async () => {
+        if(user.password == "" || user.username == ""){
+            toast.error(t("reset-password.notifications.error.incomplete"));
+            return;
+        }
+        if (!isPasswordValid(user.password)) {
+            toast.error(t("reset-password.notifications.error.weak-password"));
+            return;
+        }
+        await getUserId();
     };
 
     const notify = () => {
-        toast.promise(
-            setRouterHandler(), {
-                loading: t("reset-password.notifications.success"),
-                success: t("reset-password.notifications.in-process"),
-                error: t("reset-password.notifications.error"),
-            }
-        );
+        handleSubmit();
     };
 
     return (
@@ -67,13 +92,13 @@ const ResetPassword = () => {
                         type="text"
                         placeholder={t("reset-password.name-placeholder")}
                         className="c-input__input"
-                        onChange={(e) => { setUser({...user, username: e.target.value}) }}
+                        onChange={(e) => setUser({ ...user, username: e.target.value })}
                     />
                     <input
                         type="password"
                         placeholder={t("reset-password.password-placeholder")}
                         className="c-input__input mt-2"
-                        onChange={(e) => { setUser({...user, password: e.target.value}) }}
+                        onChange={(e) => setUser({ ...user, password: e.target.value })}
                     />
                     <button
                         className="c-button my-2 py-4 font-semibold"
@@ -88,3 +113,4 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
+

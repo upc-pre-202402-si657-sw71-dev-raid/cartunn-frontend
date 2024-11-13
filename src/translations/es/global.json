@@ -6,12 +6,12 @@
         "password-placeholder": "Ingresar contraseña",
         "forgot-password": "¿Has olvidado tu contraseña?",
         "button": "Iniciar sesión",
-        "do-you-already-have-an-account": "¿No tienes cuenta?",
+        "no-account": "¿No tienes cuenta?",
         "sign-up": "Crear cuenta",
         "notifications": {
-            "success": "Iniciando sesión",
-            "in-process": "Sesión iniciada correctamente",
-            "error": "Error: Usuario no registrado 😔"
+            "success": "Sesión iniciada correctamente",
+            "in-process": "Iniciando sesión",
+            "error": "No pudo iniciarse sesión"
         }
     },
     "sign-up": {
@@ -27,7 +27,13 @@
         "notifications": {
             "success": "Creando cuenta",
             "in-process": "Cuenta creada correctamente",
-            "error": "Error: No se creó la cuenta 😔"
+            "error": {
+                "invalid-username": "Nombre inválido",
+                "weak-password" : "La contraseña es muy débil",
+                "incomplete" : "Faltan datos",
+                "server": "Error en el servidor. Inténtelo más tarde",
+                "register": "Error al registrar el usuario"
+            }
         }
     },
     "reset-password": {
@@ -38,7 +44,12 @@
         "notifications": {
             "success": "Reseteando contraseña",
             "in-process": "Contraseña reseteado",
-            "error": "Error: No se reseteó 😔"
+            "error": {
+                "invalid-username": "No se pudo encontrar el usuario",
+                "weak-password" : "La contraseña es muy débil",
+                "incomplete" : "Faltan datos",
+                "server": "Error en el servidor. Inténtelo más tarde"
+            }
         }
     },
     "drawer": {

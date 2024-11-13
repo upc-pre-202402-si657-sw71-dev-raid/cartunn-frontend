@@ -6,12 +6,12 @@
         "password-placeholder": "Enter your password",
         "forgot-password": "Have you forgot your password?",
         "button": "Login",
-        "do-you-already-have-an-account": "Already have an account?",
+        "no-account": "You don't have an account?",
         "sign-up": "Sign up",
         "notifications": {
-            "success": "Logging in",
-            "in-process": "Session logged in",
-            "error": "Error: User not registered 😔"
+            "success": "Session logged in",
+            "in-process": "Logging in",
+            "error": "Couldn't sign in"
         }
     },
     "sign-up": {
@@ -27,7 +27,13 @@
         "notifications": {
             "success": "Creating an account",
             "in-process": "Account created",
-            "error": "Error: Account was not created 😔"
+            "error": {
+                "invalid-username": "Invalid name",
+                "weak-password" : "The password is too weak",
+                "incomplete" : "Data missing",
+                "server": "Internal Server Error. Try again later",
+                "register": "Error registering user"
+            }
         }
     },
     "reset-password": {
@@ -38,7 +44,12 @@
         "notifications": {
             "success": "Resetting password",
             "in-process": "Password reset",
-            "error": "Error: Failed to reset 😔"
+            "error": {
+                "invalid-username": "Couldn't find user",
+                "weak-password" : "The password is too weak",
+                "incomplete" : "Data missing",
+                "server": "Internal Server Error. Try again later"
+            }
         }
     },
     "drawer": {

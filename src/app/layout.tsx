@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body  className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
       <I18nextProvider i18n={i18next}>
         <ChakraProvider>
             {children}

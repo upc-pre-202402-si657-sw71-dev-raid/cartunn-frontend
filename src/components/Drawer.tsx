@@ -1,6 +1,17 @@
 "use client"
 import Image from "next/image";
-import { Drawer, DrawerBody, DrawerHeader, DrawerFooter, DrawerOverlay, DrawerContent, DrawerCloseButton, Divider, useDisclosure } from "@chakra-ui/react";
+import {
+    Drawer,
+    DrawerBody,
+    DrawerHeader,
+    DrawerFooter,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    Divider,
+    useDisclosure,
+    useColorModeValue
+} from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 import Link from "next/link";
@@ -19,6 +30,7 @@ import manageReturns from "@/assets/icons/receipt.png";
 import settings from "@/assets/icons/setting-2.png";
 import help from "@/assets/icons/message.png";
 import logout from "@/assets/icons/logout-1.png";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 type DrawerDashboardProps = {
     typeUser: string,
@@ -46,6 +58,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                     </span>
                 </section>
                 <section className="flex items-center">
+                    <DarkModeToggle />
                     <section className="flex mr-4">
                         <Image
                             src={userType}
@@ -66,7 +79,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                 finalFocusRef={btnRef}
             >
                 <DrawerOverlay />
-                <DrawerContent>
+                <DrawerContent className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
                     <DrawerHeader>
                         <h2 className="mt-8 text-2xl text-center font-bold tracking-tighter">
                             {t("drawer.title")}
