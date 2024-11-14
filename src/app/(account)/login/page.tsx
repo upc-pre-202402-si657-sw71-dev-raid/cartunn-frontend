@@ -20,11 +20,33 @@ const Login = () => {
         });
     }, [user.username, user.password]);
 
-    const loginHandler = () => {
-        const storedUser = localStorage.getItem("user");
-        if (!storedUser) {
-            router.push("/client/home");
-        } else router.push("/staff/home");
+    const loginHandler = async () => {
+        const token = localStorage.getItem("token");
+        const userId = localStorage.getItem("userId");
+
+        try {
+            const response = await fetch(`${environment.serverBasePath}/users/${userId}`, {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            if (!response.ok) {
+                new Error("Failed to fetch user profile");
+            }
+
+            const userProfile = await response.json();
+            const userRole = userProfile.roles[0];
+
+            if (userRole === "ROLE_STAFF") {
+                router.push("/staff/home");
+            } else {
+                router.push("/client/home");
+            }
+        } catch (error) {
+            console.error("Error fetching user profile:", error);
+        }
     }
 
     const signInHandler = async () => {
@@ -47,7 +69,8 @@ const Login = () => {
 
             const result = await response.json();
             localStorage.setItem("token", result.token);
-            loginHandler();
+            localStorage.setItem("userId", result.id);
+            await loginHandler();
             return result;
         } catch (error) {
             console.error("Error during login:", error);
