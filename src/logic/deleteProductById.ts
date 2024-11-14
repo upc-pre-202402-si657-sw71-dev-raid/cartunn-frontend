@@ -12,9 +12,16 @@ const deleteProductById = async (id: number) => {
     };
 
     try {
+
+        const response2 = await fetch(`${environment.serverBasePath}/favorites/product/${id}`, requestOptions);
+
         const response = await fetch(`${environment.serverBasePath}/products/${id}`, requestOptions);
 
         if (!response.ok) {
+            throw new Error("Error deleting item");
+        }
+
+        if (!response2.ok) {
             throw new Error("Error deleting item");
         }
 
