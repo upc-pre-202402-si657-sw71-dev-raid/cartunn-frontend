@@ -1,5 +1,6 @@
 {
     "back-button": "Volver",
+    "dark-mode": "Modo oscuro",
     "login": {
         "title": "INICIAR SESION",
         "user-placeholder": "Ingresar usuario",
@@ -60,7 +61,7 @@
         "client": {
             "products-list": "Lista de productos",
             "favorite-list": "Lista de favoritos",
-            "your-notifications": "Tus notifications",
+            "your-notifications": "Tus notificaciones",
             "all-reports": "Todos los reportes",
             "shopping-cart": "Carrito de compras"
         },

@@ -1,17 +1,6 @@
 "use client"
 import Image from "next/image";
-import {
-    Drawer,
-    DrawerBody,
-    DrawerHeader,
-    DrawerFooter,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    Divider,
-    useDisclosure,
-    useColorModeValue
-} from "@chakra-ui/react";
+import { Drawer, DrawerBody, DrawerHeader, DrawerFooter, DrawerOverlay, DrawerContent, Divider, useDisclosure } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 import Link from "next/link";
