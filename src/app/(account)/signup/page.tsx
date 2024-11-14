@@ -44,13 +44,22 @@ const SignUp = () => {
             body: JSON.stringify({
                 username: user.username,
                 password: user.password,
+                roles: [role === "1" ? "ROLE_CLIENT" : "ROLE_STAFF"]
             }),
         };
 
         try {
             const userResponse = await fetch(`${environment.serverBasePath}/authentication/sign-up`, userRequestOptions);
-            if (!userResponse.ok) new Error(t("sign-up.notifications.error.register"));
-            return await userResponse.json();
+            if (!userResponse.ok) throw new Error(t("sign-up.notifications.error.register"));
+
+            const userData = await userResponse.json();
+            // Almacena el rol y el usuario en localStorage
+            localStorage.setItem('user', JSON.stringify({
+                username: user.username,
+                role: role === "1" ? "ROLE_CLIENT" : "ROLE_STAFF",
+            }));
+
+            return userData;
         } catch (error) {
             console.error(error);
             throw new Error(t("sign-up.notifications.error.server"));
