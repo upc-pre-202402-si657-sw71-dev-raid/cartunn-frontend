@@ -25,6 +25,7 @@ const LanguageDropdown = () => {
                         src={languages}
                         width={24}
                         alt="languages"
+                        className="dark:invert"
                     />
                     <span className="ml-2">
                         {`${t("drawer.language")}: ${language}`}

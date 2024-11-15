@@ -38,7 +38,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                         src={menuIcon}
                         width={24}
                         alt="menu"
-                        className="mb-1"
+                        className="mb-1 dark:invert"
                         ref={btnRef}
                         onClick={onToggle}
                     />
@@ -53,6 +53,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                             src={userType}
                             width={24}
                             alt="user type"
+                            className = "dark:invert"
                         />
                         <span>
                             {`${t("drawer.type-user")}: ${props.typeUser}`}
@@ -90,7 +91,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={productList}
                                             width={24}
                                             alt="products list"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.client.products-list")}
                                     </Link>
@@ -106,7 +107,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={favorites}
                                             width={24}
                                             alt="favorites"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.client.favorite-list")}
                                     </Link>
@@ -122,7 +123,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={notifications}
                                             width={24}
                                             alt="notifications"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.client.your-notifications")}
                                     </Link>
@@ -138,7 +139,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={manageReturns}
                                             width={24}
                                             alt="reports"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.client.all-reports")}
                                     </Link>
@@ -154,7 +155,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={shoppingCart}
                                             width={24}
                                             alt="shopping cart"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.client.shopping-cart")}
                                     </Link>
@@ -173,7 +174,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={settings}
                                             width={24}
                                             alt="settings"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.configurations")}
                                     </Link>
@@ -189,7 +190,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={help}
                                             width={24}
                                             alt="help"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.help-center")}
                                     </Link>
@@ -210,7 +211,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={productList}
                                             width={24}
                                             alt="orders list"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.staff.orders-list")}
                                     </Link>
@@ -226,7 +227,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={uploadItem}
                                             width={24}
                                             alt="upload item"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.staff.upload-item")}
                                     </Link>
@@ -242,7 +243,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={updateItem}
                                             width={24}
                                             alt="update item"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.staff.update-item")}
                                     </Link>
@@ -258,7 +259,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={removeItem}
                                             width={24}
                                             alt="remove item"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.staff.remove-item")}
                                     </Link>
@@ -274,7 +275,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={manageReturns}
                                             width={24}
                                             alt="manage returns"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.staff.manage-returns")}
                                     </Link>
@@ -291,7 +292,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={settings}
                                             width={24}
                                             alt="settings"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.configurations")}
                                     </Link>
@@ -307,7 +308,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                             src={help}
                                             width={24}
                                             alt="help"
-                                            className="mr-2"
+                                            className="mr-2 dark:invert"
                                         />
                                         {t("drawer.help-center")}
                                     </Link>
@@ -331,7 +332,7 @@ const DrawerDashborad = (props: DrawerDashboardProps) => {
                                     src={logout}
                                     width={24}
                                     alt="logout"
-                                    className="mr-2"
+                                    className="mr-2 dark:invert"
                                 />
                                 {t("drawer.logout")}
                             </Link>
