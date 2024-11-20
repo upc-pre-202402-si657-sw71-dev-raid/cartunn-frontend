@@ -25,6 +25,7 @@ function DarkModeToggle() {
                     src={SunLogo}
                     width={24}
                     alt="user type"
+                    className="dark:invert"
                 />
             ) : (
                 <Image
