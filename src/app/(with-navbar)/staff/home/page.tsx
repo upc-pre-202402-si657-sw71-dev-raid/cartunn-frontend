@@ -86,7 +86,7 @@ const HomePage = () => {
                 <TableContainer className="w-full mt-4">
                     <Table variant="simple" colorScheme="gray">
                         <Thead>
-                            <Tr>
+                            <Tr className="dark:invert">
                                 <Th textAlign="center">{t("orders.id")}</Th>
                                 <Th textAlign="center">{t("orders.title-order")}</Th>
                                 <Th textAlign="center">{t("orders.product-description")}</Th>

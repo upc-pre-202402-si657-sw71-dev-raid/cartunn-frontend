@@ -66,6 +66,7 @@ const ProductClientCard = (props: Product) => {
                         src={isFavorite ? favoriteFilled : favorite}
                         width={24}
                         alt="favorites"
+                        className="dark:invert"
                     />
                 </button>
             </section>
@@ -75,7 +76,7 @@ const ProductClientCard = (props: Product) => {
                 alt={props.title}
                 height={200}
                 objectFit="cover"
-                className="w-full rounded-lg"
+                className="w-full rounded-lg "
             />
             <section className="flex flex-col mt-4">
                 <span className="font-bold tracking-tighter italic">{props.title}</span>
@@ -87,7 +88,7 @@ const ProductClientCard = (props: Product) => {
                     <span className="font-bold tracking-tighter">${props.price}.00</span>
                 </section>
                 <button
-                    className="mt-2 py-3 bg-gray-50 hover:bg-gray-200 font-semibold rounded-sm border"
+                    className="mt-2 py-3 bg-gray-50 hover:bg-gray-200 font-semibold rounded-sm border "
                     onClick={productRefundHandler}
                 >
                     {t("client.home.refund-button")}
