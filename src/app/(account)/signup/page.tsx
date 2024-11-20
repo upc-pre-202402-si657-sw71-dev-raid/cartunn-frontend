@@ -50,6 +50,7 @@ const SignUp = () => {
 
         try {
             const userResponse = await fetch(`${environment.serverBasePath}/authentication/sign-up`, userRequestOptions);
+            console.log(environment.serverBasePath)
             if (!userResponse.ok) throw new Error(t("sign-up.notifications.error.register"));
 
             const userData = await userResponse.json();
