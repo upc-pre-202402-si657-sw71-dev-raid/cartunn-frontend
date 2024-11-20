@@ -26,7 +26,7 @@ const ResetPassword = () => {
         }
     };
 
-    const isPasswordValid = (password) => {
+    const isPasswordValid = (password: string) => {
         const minLength = 8;
         const hasUpperCase = /[A-Z]/.test(password);
         const hasLowerCase = /[a-z]/.test(password);
@@ -36,7 +36,7 @@ const ResetPassword = () => {
         return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
     };
 
-    const resetPasswordHandler = async (id, rol) => {
+    const resetPasswordHandler = async (id: number, rol: string) => {
         const userRequestOptions = {
             method: "PUT",
             headers: {
